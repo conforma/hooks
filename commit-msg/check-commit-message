@@ -12,7 +12,7 @@ fi
 # The regex pattern
 # The (?i) is for case-insensitive matching
 # The \s* at the end is for optional trailing whitespace
-pattern='^(?i)(ref|refs|reference|references|res|resolve|resolves)\s*:\s*((#|gh-)\d+||[A-Za-z]+-\d+)\s*$'
+pattern='^(?i)(ref|refs|reference|references|res|resolve|resolves)\s*:\s*((#|gh-)\d+|[A-Za-z]+-\d+)\s*$'
 
 # Scan the entire file for lines matching the pattern
 if grep -Pq "$pattern" "$input_file"; then
@@ -35,16 +35,9 @@ else
   done while working on an issue, amend the commit to include
   a reference to the issue or ticket like so:
 
-<<<<<<< HEAD
   reference: PROJ-1234
   or
   reference: #123 (if referencing a GitHub issue)
-=======
-  ref: #123 // For GitHub issues
-  ref: PROJ-1234 // For other issue tracker IDs
-
-  See the contributing guidelines of this project for more details.
->>>>>>> cde242e (Fix reference for GitHub)
 
   Don't have a ticket to reference? You should create one.
   """
