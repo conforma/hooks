@@ -12,7 +12,7 @@ fi
 # The regex pattern
 # The (?i) is for case-insensitive matching
 # The \s* at the end is for optional trailing whitespace
-pattern="^(?i)(ref|refs|reference|references|res|resolve|resolves)[ \t]*:[ \t]*(gh-|\!|[A-Za-z]+-)\d+\s*$"
+pattern='^(?i)(ref|refs|reference|references|res|resolve|resolves)\s*:\s*(#\d+||[A-Za-z]+-\d+)\s*$'
 
 # Scan the entire file for lines matching the pattern
 if grep -Pq "$pattern" "$input_file"; then
@@ -24,13 +24,13 @@ else
 
   If this commit resolves an issue, add:
   
-  res: !123 # For GitHub issues
-  res: PROJ-1234 # For other issue tracker IDs
+  res: #123 // For GitHub issues
+  res: PROJ-1234 // For other issue tracker IDs
 
   If this commit is referencing an issue, but does not resolve it, add:
 
-  ref: !123 # For GitHub issues
-  ref: PROJ-1234 # For other issue tracker IDs
+  ref: #123 // For GitHub issues
+  ref: PROJ-1234 // For other issue tracker IDs
 
   See the contributing guidelines of this project for more details.
 
