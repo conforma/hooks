@@ -16,26 +16,30 @@ pattern="^(?i)(ref|refs|reference|references|res|resolve|resolves)[ \t]*:[ \t]*(
 
 # Scan the entire file for lines matching the pattern
 if grep -Pq "$pattern" "$input_file"; then
-  echo "all good"
+  echo """
+  Commit message meets requirements.
+  """
   exit 0
 else
   echo """
-  Please add ticket reference to commit message.
+  Commit message does not meet the requirements.
 
-  If this commit resolves an issue, add:
+  If commit resolves an issue or ticket, amend the commit to
+  include a reference to the issue or ticket like so:
   
-  res: !123 # For GitHub issues
-  res: PROJ-1234 # For other issue tracker IDs
+  resolves: PROJ-1234
+  or
+  resolves: #123 (if resolving a GitHub issue)
 
-  If this commit is referencing an issue, but does not resolve it, add:
+  If commit does not resolve an issue or ticket, but was
+  done while working on an issue, amend the commit to include
+  a reference to the issue or ticket like so:
 
-  ref: !123 # For GitHub issues
-  ref: PROJ-1234 # For other issue tracker IDs
-
-  See the contributing guidelines of this project for more details.
+  reference: PROJ-1234
+  or
+  reference: #123 (if referencing a GitHub issue)
 
   Don't have a ticket to reference? You should create one.
   """
   exit 1
 fi
-
