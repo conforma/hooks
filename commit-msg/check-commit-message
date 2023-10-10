@@ -12,7 +12,7 @@ fi
 # The regex pattern
 # The (?i) is for case-insensitive matching
 # The \s* at the end is for optional trailing whitespace
-pattern='^(?i)(ref|refs|reference|references|res|resolve|resolves)\s*:\s*((#|gh-)\d+|[A-Za-z]+-\d+)\s*$'
+pattern='^(?i)(ref|refs|reference|references|res|resolve|resolves|resolved|close|closes|closed|fix|fixes|fixed)\s*:\s*((#|gh-)\d+|[A-Za-z]+-\d+)\s*$'
 
 # Scan the entire file for lines matching the pattern
 if grep -Pq "$pattern" "$input_file"; then
