@@ -33,8 +33,8 @@ At this point, executing `git commit` will trigger the `check-commit-msg` hook, 
 
 |if your commit|use this keyword|value|
 |-|-------|-----|
-|resolves an issue/ticket|resolves, res, resolved| !123(only for GitHub Issues), PROJ-1234|
-|only references an issue/ticket|ref, refs, references, refers to| !123(only for GitHub Issues), PROJ-1234|
+|resolves an issue/ticket|resolves, res, resolved| #123(only for GitHub Issues), PROJ-1234|
+|only references an issue/ticket|ref, refs, references, refers to| #123(only for GitHub Issues), PROJ-1234|
 
 *Example git commit message*:
 ```
