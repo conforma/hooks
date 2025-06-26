@@ -19,7 +19,7 @@ To start, in the repository in which you wish to utilize these commit hook scrip
 
 ```
 repos:
-  - repo: https://github.com/enterprise-contract/hooks
+  - repo: https://github.com/conforma/hooks
     rev: v0.0.1
     hooks:
       - id: check-commit-message
@@ -62,4 +62,4 @@ For organizational purposes, if your hook is file based (script, python, golang,
 See [this link](https://git-scm.com/docs/githooks#_hooks) for hook types.
 
 ## Questions or Issues?
-Feel free to post a [question](https://github.com/enterprise-contract/hooks/discussions) or open an [issue](https://github.com/enterprise-contract/hooks/issues) if you have questions any issues.
+Feel free to post a [question](https://github.com/conforma/hooks/discussions) or open an [issue](https://github.com/conforma/hooks/issues) if you have questions any issues.
